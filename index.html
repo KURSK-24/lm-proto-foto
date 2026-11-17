@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Какая съёмка тебе подойдёт</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+:root{--bg:#0f0d0c;--card:#1a1716;--line:#2e2927;--text:#f3ede8;--muted:#a89e97;--accent:#c8423a;--accent2:#e9d5c4}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font:16px/1.5 -apple-system,"Segoe UI",Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.serif{font-family:"Didot","Bodoni MT","Playfair Display",Georgia,"Times New Roman",serif}
+.proto{background:var(--accent);color:#fff;text-align:center;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:7px 16px}
+.wrap{max-width:560px;margin:0 auto;padding:0 16px 48px}
+header{display:flex;align-items:center;gap:12px;padding:20px 0 8px}
+header img{width:52px;height:52px;border-radius:50%;object-fit:cover;filter:grayscale(1)}
+header b{display:block;font-size:15px}
+header span{color:var(--muted);font-size:13px}
+.hero{position:relative;margin:12px 0 0;border-radius:18px;overflow:hidden;aspect-ratio:4/5;background:#222}
+.hero .grid{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px}
+.hero .grid img{width:100%;height:100%;object-fit:cover}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(0,0,0,.88))}
+.hero .txt{position:absolute;left:20px;right:20px;bottom:22px}
+.hero h1{font-size:34px;line-height:1.05;font-weight:400}
+.hero p{color:var(--accent2);margin-top:10px;font-size:15px}
+.btn{display:block;width:100%;border:0;border-radius:14px;padding:17px 18px;font-size:17px;font-weight:600;cursor:pointer;background:var(--text);color:#111;text-align:center;text-decoration:none;margin-top:16px}
+.btn.red{background:var(--accent);color:#fff}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line);font-weight:500}
+.note{color:var(--muted);font-size:13px;text-align:center;margin-top:10px}
+.screen{display:none}.screen.on{display:block;animation:in .35s ease}
+@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.bar{height:3px;background:var(--line);border-radius:3px;margin:22px 0 18px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);width:0;transition:width .3s}
+.qn{color:var(--muted);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.q{font-size:26px;line-height:1.15;margin:6px 0 18px;font-weight:400}
+.opt{display:block;width:100%;text-align:left;background:var(--card);border:1px solid var(--line);color:var(--text);border-radius:14px;padding:15px 16px;font-size:16px;margin-bottom:10px;cursor:pointer;transition:border-color .15s,background .15s}
+.opt:hover,.opt:focus-visible{border-color:var(--accent);outline:none}
+.opt small{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.back{background:none;border:0;color:var(--muted);font-size:14px;margin-top:6px;cursor:pointer;padding:6px 0}
+.res-k{color:var(--accent2);font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-top:24px}
+.res-h{font-size:38px;line-height:1.05;font-weight:400;margin:6px 0 12px}
+.res-d{color:#ddd3cb}
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:18px 0}
+.gal img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:10px;background:#222}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:12px}
+.box h3{font-size:15px;letter-spacing:.04em;text-transform:uppercase;color:var(--accent2);margin-bottom:10px;font-weight:600}
+.box ul{list-style:none}
+.box li{padding:6px 0 6px 20px;position:relative;color:#e6ddd6}
+.box li:before{content:"";position:absolute;left:2px;top:14px;width:8px;height:1px;background:var(--accent)}
+.price{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px}
+.price b{font-size:20px}
+.price span{font-size:22px;color:var(--accent2);white-space:nowrap}
+.tag{display:inline-block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;background:#2b2220;color:var(--accent2);border:1px dashed #6b4a40;border-radius:6px;padding:3px 7px;margin-top:10px}
+footer{border-top:1px solid var(--line);margin-top:36px;padding-top:18px;color:var(--muted);font-size:13px;text-align:center}
+</style>
+</head>
+<body>
+<div class="proto">Прототип лид-магнита для Насти · собран «Средой продаж»</div>
+<div class="wrap">
+  <header>
+    <img src="img/ava.jpg" alt="Настя" width="52" height="52">
+    <div><b>Настя · фотограф, модель, стилист</b><span>Нижний Новгород</span></div>
+  </header>
+
+  <section class="screen on" id="s0">
+    <div class="hero">
+      <div class="grid">
+        <img src="img/05.jpg" alt=""><img src="img/10.jpg" alt="">
+        <img src="img/07.jpg" alt=""><img src="img/04.jpg" alt="">
+      </div>
+      <div class="shade"></div>
+      <div class="txt">
+        <h1 class="serif">Какая съёмка подойдёт именно тебе?</h1>
+        <p>6 вопросов, одна минута. В конце твой стиль кадра, примеры, что надеть и какой формат съёмки выбрать</p>
+      </div>
+    </div>
+    <button class="btn red" onclick="go(1)">Пройти тест</button>
+    <p class="note">Подходит, даже если ты ни разу не снималась и не знаешь, чего хочешь</p>
+  </section>
+
+  <section class="screen" id="sq">
+    <div class="bar"><i id="prog"></i></div>
+    <div class="qn" id="qn"></div>
+    <h2 class="q serif" id="qt"></h2>
+    <div id="opts"></div>
+    <button class="back" onclick="prev()">← назад</button>
+  </section>
+
+  <section class="screen" id="sr">
+    <div class="res-k">Твой стиль кадра</div>
+    <h2 class="res-h serif" id="rh"></h2>
+    <p class="res-d" id="rd"></p>
+    <div class="gal" id="rg"></div>
+
+    <div class="box"><h3>Что надеть</h3><ul id="rw"></ul></div>
+    <div class="box" id="rposebox"><h3>Если зажимаешься в кадре</h3><ul>
+      <li>Позы ставлю я сама: с 2015 года работаю моделью и знаю, как телу стоять, чтобы на фото было красиво, а не напряжённо</li>
+      <li>Приношу на съёмку немного своего съёмочного гардероба, образ можно докрутить прямо на месте</li>
+      <li>Не надо уметь позировать. Надо прийти</li>
+    </ul></div>
+
+    <div class="box"><h3>Твой формат съёмки</h3>
+      <div class="price"><b id="pn"></b><span id="pp"></span></div>
+      <ul id="pl"></ul>
+    </div>
+
+    <a class="btn red" href="https://t.me/crying_moonflower" target="_blank" rel="noopener">Хочу такую съёмку</a>
+    <span class="tag">в рабочей версии: бот присылает подборку и чек-лист подготовки</span>
+    <button class="btn ghost" onclick="restart()">Пройти ещё раз</button>
+  </section>
+
+  <footer>Это прототип: фото и цены взяты с сайта Насти, тексты черновые. Рабочую версию собираем за 2-3 вечера, с Яндекс Метрикой и воронкой</footer>
+</div>
+
+<script>
+var Q=[
+ {t:"Для чего тебе фото?",o:[
+  ["Для себя и соцсетей","хочу красивые фото и почувствовать себя классной",{f:"portrait"}],
+  ["Для бренда или продаж","одежда, украшения, свой продукт",{f:"brand"}],
+  ["Портфолио модели","нужны журнальные кадры",{f:"concept"}],
+  ["Для нас двоих","love story, годовщина, свадьба",{f:"love"}]]},
+ {t:"Какое настроение тебе ближе?",o:[
+  ["Дерзко и смело","",{fashion:3}],
+  ["Ярко и весело","",{pop:3}],
+  ["Строго и графично","",{bw:3}],
+  ["Тепло и мягко","",{warm:3}],
+  ["Как в сказке или кино","",{tale:3}]]},
+ {t:"Что чаще висит в твоём шкафу?",o:[
+  ["Чёрное, строгие силуэты","",{bw:2,fashion:1}],
+  ["Яркие цвета и принты","",{pop:2}],
+  ["Винтаж, фактуры, кружево","",{tale:2,warm:1}],
+  ["Оверсайз, джинсы, кэжуал","",{fashion:1,warm:1}]]},
+ {t:"Где хочется сниматься?",o:[
+  ["Студия со светом","",{fashion:1,bw:1,tale:1}],
+  ["Город и улицы","",{pop:1,bw:1}],
+  ["Уютный интерьер","",{warm:2}],
+  ["Не знаю, предложите","это нормально, предложу варианты",{}]]},
+ {t:"Как ты чувствуешь себя перед камерой?",o:[
+  ["Зажимаюсь и не знаю, куда деть руки","",{shy:1}],
+  ["Нормально, если подсказывают","",{shy:1}],
+  ["Обожаю сниматься","",{}]]},
+ {t:"Хочется быть собой или сыграть роль?",o:[
+  ["Просто быть собой","без сложных концепций",{c:0}],
+  ["Хочу образ и идею","другая реальность, посыл, мудборд",{c:1,tale:1}],
+  ["Пока не знаю","",{c:0}]]}
+];
+var S={
+ fashion:{h:"Фэшн с характером",d:"Журнальный кадр: сильные позы, выразительный цвет, взгляд в камеру. Ты не «милая на фото», ты героиня обложки",img:["05","11","48","25"],w:["Одна яркая деталь: красное пальто, перчатки, необычная обувь","Чёткие силуэты: брюки со стрелками, жакет, корсет","Остальное я принесу из съёмочного гардероба, договоримся заранее"]},
+ pop:{h:"Цвет и игра",d:"Яркие локации, живые эмоции, юмор в кадре. Фото, которые хочется пересылать подругам",img:["04","32","16","17"],w:["Насыщенные цвета: розовый, красный, зелёный","Аксессуары с настроением: очки, кепки, бусы","Не бойся смешного: лучшие кадры получаются между позами"]},
+ bw:{h:"Чёрно-белое кино",d:"Графика, свет и тень, ничего лишнего. Такие кадры не стареют: им и через годы не стыдно висеть на стене",img:["07","08","20","33"],w:["Чёрный, белый, серый, без мелких принтов","Фактура: кожа, шёлк, крупный трикотаж","Минимум украшений, максимум силуэта"]},
+ warm:{h:"Тёплая атмосфера",d:"Мягкий свет, интерьер, ощущение интимного момента. Кадры про тебя настоящую, без масок",img:["10","36","06","44"],w:["Тёплая палитра: шоколад, молочный, золото, терракота","Мягкие ткани: шёлк, трикотаж, рубашка оверсайз","Что-то своё и любимое: украшение, книга, чашка"]},
+ tale:{h:"Сказка и концепция",d:"Кадр как сцена из фильма: образ, свет, история. Здесь ты играешь роль и становишься героиней другой реальности",img:["13","15","23","40"],w:["Образ соберём вместе по мудборду","Фактурные вещи: фатин, кружево, винтаж","Реквизит и одежду найду, если нужно"]}
+};
+var F={
+ portrait:{n:"Портретная съёмка",p:"5 000 ₽",l:["до 2 часов, 1-2 образа","40-80 фото в цветокоррекции","помогу с референсами, одеждой, локацией","готово через 14 дней"]},
+ concept:{n:"Концептуальная съёмка",p:"7 000 ₽",l:["до 4 часов, до 5 образов","концепция и мудборд вместе","50-90 фото с ретушью","готово через 20 дней"]},
+ brand:{n:"Лукбук или каталог для бренда",p:"3 000 ₽/час",l:["от 3 часов съёмки","до 10 фото каждого товара с ретушью","помогу с моделью и товаром на площадке","готово через 10 дней"]},
+ love:{n:"Свадьба / Love Story",p:"10 000 ₽",l:["до 10 часов, 1-2 образа","50-100 фото с лёгкой ретушью","шампанское и хрустальные бокалы в кадр","готово через 30 дней"]}
+};
+var i=0,ans=[];
+function show(id){document.querySelectorAll('.screen').forEach(function(s){s.classList.remove('on')});document.getElementById(id).classList.add('on');window.scrollTo(0,0)}
+function go(n){i=0;ans=[];render();show('sq')}
+function render(){
+ var q=Q[i];document.getElementById('qn').textContent='Вопрос '+(i+1)+' из '+Q.length;
+ document.getElementById('qt').textContent=q.t;
+ document.getElementById('prog').style.width=(i/Q.length*100)+'%';
+ var o=document.getElementById('opts');o.innerHTML='';
+ q.o.forEach(function(x,k){var b=document.createElement('button');b.className='opt';b.innerHTML=x[0]+(x[1]?'<small>'+x[1]+'</small>':'');b.onclick=function(){pick(k)};o.appendChild(b)});
+}
+function pick(k){ans[i]=Q[i].o[k][2];i++;if(i<Q.length)render();else result()}
+function prev(){if(i>0){i--;render()}else show('s0')}
+function result(){
+ var sc={fashion:0,pop:0,bw:0,warm:0,tale:0},f='portrait',shy=0,c=0;
+ ans.forEach(function(a){for(var k in a){if(k in sc)sc[k]+=a[k];if(k=='f')f=a.f;if(k=='shy')shy=1;if(k=='c')c=a.c}});
+ var best='fashion';for(var k in sc)if(sc[k]>sc[best])best=k;
+ if(f=='portrait'&&c==1)f='concept';
+ var s=S[best],p=F[f];
+ document.getElementById('rh').textContent=s.h;document.getElementById('rd').textContent=s.d;
+ document.getElementById('rg').innerHTML=s.img.map(function(n){return '<img src="img/'+n+'.jpg" alt="" loading="lazy">'}).join('');
+ document.getElementById('rw').innerHTML=s.w.map(function(t){return '<li>'+t+'</li>'}).join('');
+ document.getElementById('rposebox').style.display=shy?'block':'none';
+ document.getElementById('pn').textContent=p.n;document.getElementById('pp').textContent=p.p;
+ document.getElementById('pl').innerHTML=p.l.map(function(t){return '<li>'+t+'</li>'}).join('');
+ show('sr');
+}
+function restart(){show('s0')}
+</script>
+</body>
+</html>
