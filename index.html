@@ -115,7 +115,7 @@ footer{border-top:1px solid var(--line);margin-top:36px;padding-top:18px;color:v
       <p class="note" style="text-align:left;margin-top:12px">Эти позы пригодятся и для селфи. На съёмке я ставлю их сама: работаю моделью с 2015 года</p>
     </div>
 
-    <div class="box"><h3>Тебе подойдёт</h3>
+    <div class="box"><h3 id="fmth">Тебе подойдёт</h3>
       <div class="price"><b id="pn"></b><span id="pp"></span></div>
       <ul id="pl"></ul>
     </div>
@@ -215,6 +215,7 @@ function result(){
  var P=POSE[ans.p||'none'];
  document.getElementById('poseh').textContent='3 позы под тебя от модели · '+P.h;
  document.getElementById('poses').innerHTML=P.l.map(function(x){return '<div class="pose"><img src="img/'+x[0]+'.jpg" alt="" loading="lazy"><div><b>'+x[1]+'</b><span>'+x[2]+'</span></div></div>'}).join('');
+ document.getElementById('fmth').textContent=aiOk?'Если захочешь живые кадры':'Тебе подойдёт';
  var p=F[ans.f||'blog'];
  document.getElementById('pn').textContent=p.n;document.getElementById('pp').textContent=p.p;
  document.getElementById('pl').innerHTML=p.l.map(li).join('');
